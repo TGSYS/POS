@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DiscountTest {
 
-	@Test
+	/*@Test
 	public void testAllDifferentItem() {
 		
 		//GIVEN
@@ -22,7 +22,7 @@ public class DiscountTest {
 		int result = d.computeDiscount(input);
 		//THEN
 		assertEquals(expected, result);
-	}
+	}*/
 	
 	@Test
 	public void AddProductTest(){		
@@ -53,6 +53,27 @@ public class DiscountTest {
 		//when
 		order.deleteProduct(prod2);
 		order.deleteProduct(prod3);
+		
+		//then
+		assertEquals(expected, order.getOrderList().size());
+	}
+	
+	@Test
+	public void DeleteAllProductTest(){		
+		int expected = 0;
+		//given
+		Order order = new Order();
+		List<Product> productList = new ArrayList<Product>();
+		Product prod1 = new Product("Item 1",1.0);
+		Product prod2 = new Product("Item 2",2.72);
+		Product prod3 = new Product("Item 3",1.6);
+		productList.add(prod1);
+		productList.add(prod2);
+		productList.add(prod3);
+		order.setOrderList(productList);
+		
+		//when
+		order.deleteAllProduct();
 		
 		//then
 		assertEquals(expected, order.getOrderList().size());

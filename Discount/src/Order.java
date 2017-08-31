@@ -27,5 +27,9 @@ public class Order {
 		// TODO Auto-generated method stub
 		this.orderList.remove(product);
 	}
+	public void deleteAllProduct() {
+		// TODO Auto-generated method stub
+		this.orderList.removeAll(this.orderList);
+	}
 
 }
