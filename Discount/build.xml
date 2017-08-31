@@ -45,7 +45,7 @@
             <classpath refid="Discount.classpath"/>
         </javac>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
-            <src path="test"/>
+            <src path="src"/>
             <classpath refid="Discount.classpath"/>
         </javac>
     </target>
